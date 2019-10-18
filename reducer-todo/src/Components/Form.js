@@ -15,8 +15,8 @@ const Form = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type: 'ADD_ITEM', payload: item || state.item})
         setItem("")
+        dispatch({ type: 'ADD_ITEM', payload: item || state.item})
     }
     const clearCompleted = (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ const Form = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="item" placeholder="Item" onChange={handleChange} />
+                <input type="text" name="item" placeholder="Item" value={item} onChange={handleChange} />
                 <button type="submit">Submit</button>
             </form>
             {state.map((item, index) => {
